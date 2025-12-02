@@ -43,17 +43,13 @@ func run(lines []string, validFn func(string) bool) int {
 
 func part1(lines []string) int {
 	return run(lines, func(id string) bool {
-		// find the middle position, up to that character position
-		// we'll construct smaller strings to check against.
+		// find the middle position, we'll cut the id in half using that
 		middlePosition := len(id) / 2
 
-		for i := 0; i < middlePosition; i++ {
-			testString := id[0 : i+1]
-			// you can find the invalid IDs by looking for any ID
-			// which is made only of some sequence of digits repeated twice
-			if testString+testString == id {
-				return true
-			}
+		// you can find the invalid IDs by looking for any ID
+		// which is made only of some sequence of digits repeated twice
+		if id[:middlePosition] == id[middlePosition:] {
+			return true
 		}
 
 		return false
