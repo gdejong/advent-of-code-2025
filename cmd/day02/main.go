@@ -76,7 +76,7 @@ func part2(lines []string) int {
 				if testSequence == id {
 					return true
 				}
-				// stop if the constructed id no longer is a prefix if the original
+				// stop if the constructed id no longer is a prefix of the original
 				if !strings.HasPrefix(id, testSequence) {
 					break
 				}
