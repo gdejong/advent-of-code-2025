@@ -15,3 +15,14 @@ func TestPart1(t *testing.T) {
 		t.Errorf("wrong test answer, got: %d", testAnswer)
 	}
 }
+
+func TestPart2(t *testing.T) {
+
+	testData := input.Content("test_input.txt")
+
+	testAnswer := part2(testData)
+
+	if testAnswer != 4174379265 {
+		t.Errorf("wrong test answer, got: %d", testAnswer)
+	}
+}
